@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dogerino Listaroni</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+    <body>
+        <div id="app" class="container">
+            <div class="App">
+                <h1>List of dogs I want in my Life</h1>
+               <div id="example-2" class="">
+                    <li v-for='task in tasks' class="task-list myList">
+                        {{ task.name }}
+                        <div class="icon-buttons">
+                            <button class="listBtn btn btn-primary" @click.prevent='remove(task, $index)'>Pet!!</button>
+                            <button class="listBtn btn btn-primary" @click.prevent='remove(task, $index)'> &#9825;</button>
+                        </div>
+                    </li>
+                </div>
+                <div class="input-group input-group-lg">
+                    <div class="input-group-prepend">
+                        <button v-if='updateTask()' class="btn btn-primary input-group-text" id="update" @click.prevent="update()" > Lorem </button>
+                        <button v-else id="add" class="btn btn-primary input-group-text" @click.prevent="add()" />Add Doggo</button>
+                    </div>
+                    <input type="text" id="input" class="form-control addTask" aria-label="Large" v-model="newTask.name" placeholder="Found new Doggos?" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                
+                </div>
+            </div>
+
+
+<script src="script.js">
+
+</script>
+
+
+</body>
+</html>
